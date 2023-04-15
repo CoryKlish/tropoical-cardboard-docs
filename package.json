@@ -1,0 +1,16 @@
+{
+  "name": "tropical-cardboard-gitbook",
+  "version": "1.0.0",
+  "description": "Documentation for TropicalCardboard.com",
+  "main": "index.js",
+  "license": "MIT",
+  "homepage": "https://coryklish.github.io/tropical-cardboard-gitbook",
+  "scripts": {
+    "predeploy": "gitbook build",
+    "deploy": "gh-pages -d _build"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0",
+    "gitbook-cli": "^2.3.2"
+  }
+}
