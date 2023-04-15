@@ -1,11 +1,11 @@
 {
-  "name": "tropical-cardboard-gitbook",
+  "name": "tropical-cardboard-docs",
   "version": "1.0.0",
   "description": "Documentation for TropicalCardboard.com",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "serve": "gitbook serve --port 3000"
+    "build": "gitbook build"
   },
   "dependencies": {
     "gitbook-cli": "^2.3.2"
