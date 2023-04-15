@@ -10,8 +10,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          set-safe-directory: "*"
 
       - name: Configure Node
         uses: actions/setup-node@v1
@@ -34,25 +32,8 @@ jobs:
         with:
           node-version: "16.17.0"
 
-      # - name: Deploy
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     folder: _book
-      #     branch: gh-pages
-
-      - name: Init new repo in _book folder and commit generated files
-        run: |
-          cd _book
-          git init
-          git add -A
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m 'deploy'
-
-      - name: Force push to destination branch
-        uses: ad-m/github-push-action@v0.5.0
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          folder: _book
           branch: gh-pages
-          force: true
-          directory: ./_book
