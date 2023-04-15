@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          set-safe-directory: "*"
 
       - name: Configure Node
         uses: actions/setup-node@v1
@@ -43,7 +45,6 @@ jobs:
           cd _book
           git init
           git add -A
-          git config --global --add safe.directory /github/workspace/_book
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m 'deploy'
