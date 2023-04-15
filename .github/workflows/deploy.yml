@@ -27,6 +27,11 @@ jobs:
       - name: Build Gitbook
         run: yarn build
 
+      - name: Switch Back to Node 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.17.0"
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
