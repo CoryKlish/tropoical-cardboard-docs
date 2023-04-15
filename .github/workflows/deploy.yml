@@ -11,15 +11,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Counfigure Node
+      - name: Configure Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.17.0"
+
+      - name: Install
+        run: yarn install
+
+      - name: Switch to Node 8 for Gitbook CLI
         uses: actions/setup-node@v1
         with:
           node-version: "8.17.0"
 
-      - name: Install
-        run: |
-          yarn install
-          yarn run build
+      - name: Build Gitbook
+        run: yarn build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
