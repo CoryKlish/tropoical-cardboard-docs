@@ -1,0 +1,28 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    concurrency: ci-${{github.ref}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Counfigure Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "8.17.0"
+
+      - name: Install
+        run: |
+          yarn install
+          yarn run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _book
+          branch: gh-pages

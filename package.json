@@ -4,6 +4,9 @@
   "description": "Documentation for TropicalCardboard.com",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "gitbook build"
+  },
   "dependencies": {
     "gitbook-cli": "^2.3.2",
     "gulp": "^4.0.2",
