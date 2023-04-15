@@ -1,16 +1,13 @@
 {
-  "name": "tropical-cardboard-gitbook",
+  "name": "tropical-cardboard-docs",
   "version": "1.0.0",
   "description": "Documentation for TropicalCardboard.com",
   "main": "index.js",
   "license": "MIT",
-  "homepage": "https://coryklish.github.io/tropical-cardboard-gitbook",
-  "scripts": {
-    "predeploy": "gitbook build",
-    "deploy": "gh-pages -d _build"
-  },
   "dependencies": {
-    "gh-pages": "^5.0.0",
-    "gitbook-cli": "^2.3.2"
+    "gitbook-cli": "^2.3.2",
+    "gulp": "^4.0.2",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-load-plugins": "^2.0.8"
   }
 }
